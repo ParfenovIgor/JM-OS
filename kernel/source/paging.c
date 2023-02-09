@@ -82,8 +82,8 @@ void initialise_paging() {
     u32int mem_end_page = 0x1000000;
     
     nframes = mem_end_page / 0x1000;
-    frames = (u32int*) kmalloc(INDEX_FROM_BIT(nframes));
-    memset((void*)frames, 0, INDEX_FROM_BIT(nframes));
+    frames = (u32int*) kmalloc(INDEX_FROM_BIT(nframes) * sizeof(u32int));
+    memset((void*)frames, 0, INDEX_FROM_BIT(nframes) * sizeof(u32int));
     
     u32int phys;
     kernel_directory = (page_directory_t*)kmalloc_a(sizeof(page_directory_t));
