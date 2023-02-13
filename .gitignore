@@ -1,0 +1,4 @@
+i686-elf-tools
+x86_64-elf-tools
+build
+.direnv
